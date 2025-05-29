@@ -7,7 +7,7 @@ describe('My First Test Suite', function()
 
      // handling Frames
 
-        cy.visit("https://rahulshettyacademy.com/AutomationPractice"); 
+        cy.visit(Cypress.env('url')+"/AutomationPractice"); //to fecth env url from cypress.Config file
         cy.frameLoaded("#courses-iframe")
         cy.iframe().find("a[href*='mentorship']").eq(0).click()
         cy.wait(4000);
